@@ -1,6 +1,7 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: rgb(241, 246, 243);
+    min-width: 200px;
 }
 main {
     display: flex;
@@ -8,6 +9,7 @@ main {
     justify-content: center;
     width: 90%;
     margin: 0 auto;
+    max-width: 400px;
 }
 
 h1 {
@@ -59,7 +61,7 @@ border: none;
     font-size: xx-large;
 }
 
-input, button {
+input, button, li {
     width: 100%;
     border: solid 1px lightgrey;
 }
@@ -71,14 +73,51 @@ input, button {
 #add-transaction {
     background-color: rgb(180, 163, 235);
     border-style: initial;
-
     color: white;
     display: inline-block;
     height: 2rem;
 }
+
+#add-transaction:hover {
+    background-color: rgb(119, 96, 193);
+}
+
 
 hr {
     width: 0.1rem;
     border: none;
     background-color: lightgrey;
 }
+
+.expense p {
+    color: rgb(200, 60, 60);
+}
+
+.income p {
+    color: rgb(24, 163, 96);
+}
+
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    background-color: rgb(24, 163, 96);
+    margin: 0.2rem;
+}
+
+li {
+    display: flex;
+    background-color: white;
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+}
+
+li > p {
+    margin: 0.1rem 0.5rem;
+    font-size: small;
+    padding: 0.2rem ;
+
+}
+
+
