@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Gastos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Control de Gastos</h1>
+        </header>
+        <section>
+            <div class="savings">
+                <h2>TU AHORRO</h2>
+                <p id="total-savings">0.00€</p>
+            </div>
+            <div class="income-expense">
+                <div class="income">
+                    <h2>INGRESO</h2>
+                    <p>0.00€</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>GASTO</h2>
+                    <p>0.00€</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Historial</h2>
+        </section>
+        <section>
+            <h2>Añadir nueva transacción</h2>
+            <form novalidate>
+                <div>
+                    <label for="concept">Concepto</label>
+                    <input type="text" name="concept" id="concept" placeholder="Añade concepto..." required>
+                </div>
+                <div>
+                    <label for="quantity">Cantidad (negativo - gasto, positivo - ingreso)</label>
+                    <input type="number" step=".01" name="quantity" id="quantity" placeholder="Introduce cantidad..." required>
+                </div>
+                <button id="add-transaction">Añadir transacción</button>
+            </form>
+
+        </section>
+    </main>
+    
+</body>
+</html>
