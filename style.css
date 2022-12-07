@@ -1,0 +1,84 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(241, 246, 243);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: x-large;
+}
+h2 {
+    border-bottom: solid 1px lightgray;
+    border-color: rgb(196, 194, 194);
+    font-size: medium;
+}
+
+form div {
+    margin: 0.8rem 0;
+}
+
+input {
+    margin-top: 0.2rem;
+    box-sizing: border-box;
+    padding: 0.3rem;
+}
+
+.income-expense {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.savings h2, .income-expense h2 {
+border: none;
+}
+
+.income-expense div {
+    text-align: center;
+    width: 50%;
+    padding: 1rem;
+}
+
+.income-expense div > *, .savings > * {
+    margin: 0 auto;
+}
+
+.savings {
+    padding-bottom:  1rem;
+}
+
+#total-savings {
+    font-size: xx-large;
+}
+
+input, button {
+    width: 100%;
+    border: solid 1px lightgrey;
+}
+
+#quantity {
+    padding-right: 0;
+}
+
+#add-transaction {
+    background-color: rgb(180, 163, 235);
+    border-style: initial;
+
+    color: white;
+    display: inline-block;
+    height: 2rem;
+}
+
+hr {
+    width: 0.1rem;
+    border: none;
+    background-color: lightgrey;
+}
