@@ -31,29 +31,24 @@
         </section>
         <section id="history">
             <h2>Historial</h2>
-            <ul>
-                <li>
-                    <p>cine</p>
-                    <p>-10</p>
-                </li>
+            <ul id="history-ul">
             </ul>
         </section>
-        <section id="add-transaction-form">
+        <section>
             <h2>Añadir nueva transacción</h2>
-            <form novalidate>
+            <form id="add-transaction-form" novalidate>
                 <div>
                     <label for="concept">Concepto</label>
-                    <input type="text" name="concept" id="concept" placeholder="Añade concepto..." required>
+                    <input autocomplete="off" type="text" name="concept" id="concept"  placeholder="Añade concepto...">
                 </div>
                 <div>
                     <label for="quantity">Cantidad (negativo - gasto, positivo - ingreso)</label>
-                    <input type="number" step=".01" name="quantity" id="quantity" placeholder="Introduce cantidad..." required>
+                    <input autocomplete="off" type="text" name="quantity" id="quantity" placeholder="Introduce cantidad...">
                 </div>
-                <button id="add-transaction">Añadir transacción</button>
+                <button id="add-transaction" type="submit">Añadir transacción</button>
             </form>
-
         </section>
+        <script src="./index.js"></script>
     </main>
-    
 </body>
 </html>
