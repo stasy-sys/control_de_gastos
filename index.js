@@ -9,19 +9,30 @@ submitTransaction.addEventListener("submit", (e) => {
     if (conceptInputElement.value !== "" && quantityInputElement.value !== ""  && !isNaN(quantityInputElement.value)) {
         let newTransaction = {concept: conceptInputElement.value, quantity: quantityInputElement.value};
         transactions.push(newTransaction);
-        localStorage.setItem("transactions", JSON.stringify(transactions));
-        addElement(newTransaction);
+        localStorage.setItem('transactions', JSON.stringify(transactions));
+        addTransaction(newTransaction);
+        
+        conceptInputElement.value = "";
+        quantityInputElement.value = "";
     }
 })
 
-function addElement(newTransaction){
-    ulElement = document.getElementById('history-ul');
-    let newTransactionList = document.createElement('li');
+function addTransaction(newTransaction){
+    const EXPENSE_COLOR = 'rgb(200, 60, 60)'
+    const newTransactionList = document.createElement('li');
+    const incomeElement = document.getElementById('income-p');
+    const expenseElement = document.getElementById('expense-p');
+    const savingsElement = document.getElementById('savings-p');
     if (parseInt(newTransaction.quantity) < 0) {
-        newTransactionList.style.background = 'rgb(200, 60, 60)'
-    } 
-    
-        newTransactionList.innerHTML =`
+        expenseElement.innerHTML =`${parseFloat(expenseElement.innerHTML) + parseFloat(newTransaction.quantity)}`;
+        newTransactionList.style.background = EXPENSE_COLOR
+    } else {
+        incomeElement.innerHTML =`${parseFloat(incomeElement.innerHTML) + parseFloat(newTransaction.quantity)}`;
+
+    }
+savingsElement.innerHTML =`${parseFloat(incomeElement.innerHTML) + parseFloat(expenseElement.innerHTML)}`;
+    const ulElement = document.getElementById('history-ul');
+    newTransactionList.innerHTML = `
         <div>
             <p id="concept-li-p">${newTransaction.concept}</p>
             <p id="quantity-li-p">${newTransaction.quantity}</p>
@@ -30,8 +41,8 @@ function addElement(newTransaction){
     ulElement.appendChild(newTransactionList);
 }
 
-transactions = localStorage.getItem("transactions");
+transactions = localStorage.getItem('transactions');
 transactions = data ? JSON.parse(data) : [];
 transactions.forEach((element) => {
-    addElement(element);
+    addTransaction(element);
 })

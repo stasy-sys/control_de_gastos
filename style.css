@@ -57,8 +57,9 @@ border: none;
     padding-bottom:  1rem;
 }
 
-#total-savings {
+#savings-p {
     font-size: xx-large;
+    display: inline;
 }
 
 input, button, li div {
@@ -121,4 +122,8 @@ li div > p {
     margin: 0.1rem 0.5rem;
     font-size: small;
     padding: 0.2rem ;
+}
+
+#euro-p, #income-p, #expense-p {
+    display: inline-block
 }
