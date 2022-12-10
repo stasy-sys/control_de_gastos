@@ -62,7 +62,7 @@ border: none;
     display: inline;
 }
 
-input, button, li div {
+input, button, li > div {
     width: 100%;
     border: solid 1px lightgrey;
 }
@@ -127,3 +127,15 @@ li div > p {
 #euro-p, #income-p, #expense-p {
     display: inline-block
 }
+
+.remove {
+    left: 10%;;
+    width: auto;
+    padding: 0;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+}
+
