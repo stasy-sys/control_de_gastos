@@ -1,13 +1,11 @@
-let data = localStorage.getItem("transactions");
-let transactions = data ? JSON.parse(data) : [];
 const submitTransaction = document.getElementById('add-transaction-form');
-
 submitTransaction.addEventListener("submit", (e) => {
     e.preventDefault();
     const conceptInputElement = document.getElementById('concept');
     const quantityInputElement = document.getElementById('quantity');
     if (conceptInputElement.value !== "" && quantityInputElement.value !== ""  && !isNaN(quantityInputElement.value)) {
         let newTransaction = {concept: conceptInputElement.value, quantity: quantityInputElement.value};
+        let transactions = JSON.parse(localStorage.getItem("transactions"));
         transactions.push(newTransaction);
         localStorage.setItem('transactions', JSON.stringify(transactions));
         addElements(newTransaction);
@@ -49,8 +47,7 @@ function removeTransaction(button) {
     const ulElement = listElement.parentNode;
     listElement.setAttribute('id', 'remove-li');
     const transactionIndex = Array.from(ulElement.children, (x)  => {return x.id}).indexOf("remove-li");
-    transactions = localStorage.getItem('transactions');
-    transactions = data ? JSON.parse(data) : [];
+    let transactions = JSON.parse(localStorage.getItem("transactions"));
     transactions.splice(transactionIndex, 1);
     localStorage.setItem('transactions', JSON.stringify(transactions));
     console.log(localStorage.getItem("transactions"))
@@ -59,7 +56,7 @@ function removeTransaction(button) {
     
 }
 
-transactions = localStorage.getItem('transactions');
+let data = localStorage.getItem('transactions');
 transactions = data ? JSON.parse(data) : [];
 transactions.forEach((element) => {
     addElements(element);
